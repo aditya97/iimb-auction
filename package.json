@@ -1,0 +1,37 @@
+{
+  "name": "instant-auction",
+  "version": "1.0.0",
+  "description": "A modern auction platform for trading goods.",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/typeorm",
+      "**/typeorm/**",
+      "**/expo",
+      "**/expo",
+      "**/expo**",
+      "**/@types/",
+      "**/react-native",
+      "**/react-native/**react**/",
+      "**/react-native/**react**/**"
+    ]
+  },
+  "scripts": {
+    "dev": "concurrently \"cd packages/server && yarn dev\" \"cd packages/web && yarn dev\"",
+    "dev:mobile": "concurrently \"cd packages/mobile && yarn start\" \"cd packages/server && yarn dev\"",
+    "gen": "cd packages/client-controllers/ && yarn gen"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timthedev07/InstantAuction.git"
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/timthedev07/InstantAuction/issues"
+  },
+  "homepage": "https://github.com/timthedev07/InstantAuction#readme"
+}

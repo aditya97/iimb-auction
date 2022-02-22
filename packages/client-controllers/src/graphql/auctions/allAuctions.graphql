@@ -1,0 +1,26 @@
+query AllAuctions {
+  allAuctions {
+    count
+    # the subfields of the auctions need to be synchronized across all queries/mutations
+    # that receive an [Auction]
+    auctions {
+      id
+      title
+      description
+      seller {
+        username
+      }
+      status
+      dateCreated
+      dateUpdated
+      item {
+        id
+        picture
+        name
+      }
+      winner {
+        username
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+mutation CreateBid($itemId: Int!, $auctionId: String!) {
+  createBid(itemId: $itemId, auctionId: $auctionId) {
+    id
+    bidder {
+      username
+    }
+    item {
+      id
+      picture
+      name
+    }
+    won
+  }
+}

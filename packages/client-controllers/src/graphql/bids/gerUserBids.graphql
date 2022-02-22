@@ -1,0 +1,23 @@
+query UserBids {
+  getUserBids {
+    count
+    bids {
+      id
+      item {
+        id
+        name
+        picture
+      }
+      bidder {
+        username
+      }
+      auction {
+        id
+        item {
+          picture
+        }
+      }
+      won
+    }
+  }
+}

@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url(./var.css);
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url(./alert.module.css);
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../../public/fonts/roboto/Roboto-Regular.ttf");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400 !important;
+}
+
+@keyframes grow-horizontal-kf {
+  from {
+    width: 10px;
+    left: calc(50%-5px);
+    background-color: theme("colors.emerald.700");
+  }
+  to {
+    width: 100%;
+    left: 0;
+    background-color: theme("colors.emerald.500");
+  }
+}
+.load-animate-normal {
+  animation: grow-horizontal-kf 1.7s ease-in-out forwards;
+}
+.load-animate-fast {
+  animation: grow-horizontal-kf 1.3s ease-in-out forwards;
+}
+.load-animate-faster {
+  animation: grow-horizontal-kf 1s ease-in-out forwards;
+}
+.load-animate-very-fast {
+  animation: grow-horizontal-kf 0.5s ease-in-out forwards;
+}
+
+@layer components {
+  .cyan-button {
+    @apply bg-cyan-600 text-white rounded px-4 py-1;
+  }
+
+  .green-button {
+    @apply bg-emerald-600 text-white rounded px-4 py-1;
+  }
+
+  .secondary-button {
+    @apply bg-secondary-600 text-white rounded px-4 py-1;
+  }
+
+  .dark-button {
+    @apply bg-neutral-600 text-white rounded px-4 py-1;
+  }
+
+  .danger-button {
+    @apply bg-red-600 text-white rounded px-4 py-1;
+  }
+
+  .nav-item {
+    @apply flex items-center justify-center w-14 h-9 p-3 rounded-full transition-all duration-300 hover:bg-gray-200 hover:bg-opacity-60 cursor-pointer;
+  }
+
+  .user-tab-item {
+    @apply cursor-pointer text-neutral-300 transition-all duration-200 text-black hover:text-neutral-700 w-[120px] text-center;
+  }
+
+  #screen-overlay {
+    @apply w-full h-full fixed cursor-not-allowed z-[-10] opacity-0 transition duration-150;
+    background-color: rgba(26, 26, 26, 0.58);
+  }
+
+  #screen-overlay.active {
+    @apply opacity-100 z-[100] transition duration-150;
+  }
+}
+
+.oauth-buttons-wrapper {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.oauth-button {
+  height: 50px;
+  min-width: 205px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  color: white;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.oauth-button.oauth-button-google {
+  background-color: #4285f4;
+}
+
+.oauth-button.oauth-button-microsoft {
+  background-color: rgb(59, 64, 70);
+}
+
+.oauth-button.oauth-button-discord {
+  background-color: rgb(96, 99, 239);
+}
+
+.oauth-button .oauth-button__icon {
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+}
+
+/* setting heading sizes */
+h1 {
+  font-size: 4rem !important;
+}
+
+h2 {
+  font-size: 2.8rem !important;
+}
+
+h3 {
+  font-size: 2rem !important;
+}
+
+h4 {
+  font-size: 1.4rem !important;
+}
+
+p {
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+}
+
+p.small {
+  font-size: 0.85rem !important;
+}

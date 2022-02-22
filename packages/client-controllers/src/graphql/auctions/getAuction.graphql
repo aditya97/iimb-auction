@@ -1,0 +1,33 @@
+query GetAuction($auctionId: String!) {
+  getAuction(auctionId: $auctionId) {
+    id
+    title
+    description
+    seller {
+      username
+    }
+    status
+    dateCreated
+    dateUpdated
+    item {
+      id
+      picture
+      name
+    }
+    winner {
+      username
+    }
+    bids {
+      id
+      item {
+        id
+        name
+        picture
+      }
+      bidder {
+        username
+      }
+      won
+    }
+  }
+}

@@ -1,0 +1,15 @@
+mutation CreateItem($name: String!, $picture: Upload!) {
+  createItem(name: $name, picture: $picture) {
+    id
+    picture
+    name
+  }
+}
+
+mutation CreateItemWithPictureUrl($pictureUrl: String!, $name: String!) {
+  createItemWithPictureUrl(pictureUrl: $pictureUrl, name: $name) {
+    id
+    picture
+    name
+  }
+}
